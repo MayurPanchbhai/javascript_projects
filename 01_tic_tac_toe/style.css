@@ -1,9 +1,7 @@
 *{
-    
     margin: 0;
     padding: 0;
     background:rgb(11, 123, 135);
-    
 }
 body{
     color: rgb(1, 14, 9);
@@ -36,3 +34,30 @@ body{
     font-size: 8vmin;
     color: #b0413e;
 } 
+
+#reset-btn{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #191913;
+    color:#fff;
+    border-radius: 1rem;
+}
+#new-btn{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #d3d305;
+    color:#fff;
+    border-radius: 1rem;
+}
+
+#msg{
+    color: #ffffc7;
+    font-size:8vmin
+}
+.msg-container{
+    height: 15vmin;
+}
+
+.hide{
+    display: none;
+}
