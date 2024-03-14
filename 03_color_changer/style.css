@@ -1,0 +1,25 @@
+section{
+    text-align: center;
+}
+
+.mainDiv{
+    width:max-width;
+    height: 89vh;
+    background: rgb(150, 133, 146);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#btn{
+    font-size: 20px;
+    padding: 20px 40px;
+    border-radius: 8px;
+}
+
+#btn:hover{
+    color: blue;
+    /* transform: translateY(-10px); */
+    transition: 1000ms ease-in-out;
+}
