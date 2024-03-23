@@ -1,6 +1,6 @@
     let btns = document.getElementsByClassName("button");
     let faces = document.getElementsByClassName("Dice-face");
-    let transition = document.getElementsByClassName("showDice")
+
     let n = 6;
 
     for (let i = 0; i < btns.length; i++) {
@@ -17,3 +17,12 @@
             faces[n - 1].style.display = "block";
         });
     }
+
+
+    // function rollDice() {
+    //     var showDice = document.getElementById('showDice');
+        
+    //     showDice.style.transform="translate(50px, 100px);"
+    
+    //   }
+      

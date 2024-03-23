@@ -41,6 +41,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.5s ease-in-out;
+
+
 }
 
 
@@ -50,5 +53,15 @@
     margin-top:7%;
     font-size: 40px;
         
+}
+
+.roll {
+    animation: rolling 0.5s infinite linear;
+}
+
+
+@keyframes rolling {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
