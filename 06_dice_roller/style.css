@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    height: 97vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(219, 69, 69);
+
+}
+.container{
+    background-color: blue;
+    text-align: center;
+    height: 35vh;
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.button{
+    width: 100px;
+    padding: 10px;
+    background-color: #fff;
+    color: black;
+}
+
+
+.showDice{
+    border: 2px solid white;
+    height: 10vh;
+    width: 10vh;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.Dice-face{
+    display: none;
+    color: black;
+    margin-top:7%;
+    font-size: 40px;
+        
+}
+
