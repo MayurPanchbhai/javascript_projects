@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    margin: auto;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: ; */
+    padding: 0 20px;
+    padding-bottom: 35px;
+    border: 1px solid #b76060 ;
+    border-radius: 5px;
+    width: 30%;
+    
+}
+
+.box{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+
+}
+
+.box input{
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.heading{
+    justify-content: center;
+}
