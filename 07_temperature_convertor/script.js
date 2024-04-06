@@ -1,41 +1,28 @@
 let c=document.getElementById("celsius");
 let f=document.getElementById("fahrenheit");
 let k=document.getElementById("kelvin");
-let b=document.getElementById("btn");
-let o=document.getElementById("output");
+// let b=document.getElementById("btn");
+// let o=document.getElementById("output");
 
 
-// values
+function calTemp(event) {
+    const currentVal = parseFloat(event.target.value); // Parsing the value as float
 
+    switch (event.target.name) {
+        case "celsius":
+            f.value = (currentVal * 1.8 + 32).toFixed(2); // Celsius to Fahrenheit
+            k.value = (currentVal + 273.15).toFixed(2); // Celsius to Kelvin
+            break;
 
-b.addEventListener("click",function(){
-    let cInput=parseFloat(c.value);
-    let fInput=parseFloat(f.value);
-    let kInput=parseFloat(k.value);
-    // let Nc =
-    if(!isNaN(cInput) ){
-        let ft=((9/5* cInput) + 32);
-        let kt=(cInput) +273.15;
+        case "fahrenheit":
+            c.value = ((currentVal - 32) / 1.8).toFixed(2); // Fahrenheit to Celsius
+            k.value = (((currentVal - 32) / 1.8) + 273.15).toFixed(2); // Fahrenheit to Kelvin
+            break;
 
-        f.value=ft;
-        k.value=kt;
+        case "kelvin":
+            c.value = (currentVal - 273.15).toFixed(2); // Kelvin to Celsius
+            f.value = ((currentVal - 273.15) * 1.8 + 32).toFixed(2); // Kelvin to Fahrenheit
+            break;
     }
-    else if(!isNaN(fInput)){
-        c.value=0;
-        k.value=0;
-        let ct=(fInput - 32) * 5/9;
-        let kt=(fInput-32) * (5 /9) + 273.15;
+}
 
-        c.value=ct;
-        k.value=kt;
-    }
-
-    else {
-        o.innerText="erro"
-    }
-
-   
-    
-    
-    
-})
