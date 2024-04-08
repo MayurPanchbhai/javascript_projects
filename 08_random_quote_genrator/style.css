@@ -1,0 +1,15 @@
+
+.main{
+    display: flex;
+    background-color: brown;
+    height: 90vh;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.innerDiv{
+    height: max-content;
+    padding: 20px 20px;
+}
