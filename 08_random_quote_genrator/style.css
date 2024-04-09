@@ -1,7 +1,7 @@
 
 .main{
     display: flex;
-    background-color: brown;
+    /* background-color: brown; */
     height: 90vh;
     text-align: center;
     justify-content: center;
@@ -9,7 +9,44 @@
 
 }
 
-.innerDiv{
-    height: max-content;
+
+.innerDiv {
+    min-height: 50%;
     padding: 20px 20px;
+    background: rgb(34, 193, 195);
+    background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(45, 235, 253, 1) 100%);
+    width: 80%;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* line-height: 47px; */
+    justify-content: space-around;
+}
+
+#quote{
+    font-size: 25px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+}
+
+#quoteMaster{
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+button{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(45,235,253,1) 100%);
+    width: 20%;
+    height: 40px;
+    border: none;
+    width: auto;
+    
+}
+
+button:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }

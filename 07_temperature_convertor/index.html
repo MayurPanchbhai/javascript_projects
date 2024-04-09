@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Temperature Converter</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-gray-100">
     <!-- header starts -->
     <div class="text-gray-600 body-font bg-white" style="color: white; background: #0d7a7e;">
-        <div class="container-fluid mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center h-auto">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center h-auto">
             <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
                
               <span class="ml-3 text-xl" style="color: white;">Mayur Panchbhai</span>
@@ -31,33 +31,30 @@
     </div>
     <!-- header end -->
 
-    <div class="container" >
-        <div class="content">
-            <div class="box heading">
-                <h1>Temperature Converter</h1>
+    <div class="container mx-auto px-4 py-8">
+        <div class="bg-white rounded-lg shadow-md p-8">
+            <div class="mb-4">
+                <h1 class="text-2xl font-semibold text-gray-800">Temperature Converter</h1>
             </div>
-            <div class="box ">
-                <label for="">Celsius:</label>
-                <input type="number" id="celsius" onchange="calTemp(event)" name="celsius">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label for="celsius" class="block text-sm font-medium text-gray-600 mb-1">Celsius:</label>
+                    <input type="number" id="celsius" onchange="calTemp(event)" name="celsius" class="form-input border-gray-300 rounded-md focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-200">
+                </div>
+                <div>
+                    <label for="fahrenheit" class="block text-sm font-medium text-gray-600 mb-1">Fahrenheit:</label>
+                    <input type="number" id="fahrenheit" onchange="calTemp(event)" name="fahrenheit" class="form-input border-gray-300 rounded-md focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-200">
+                </div>
+                <div>
+                    <label for="kelvin" class="block text-sm font-medium text-gray-600 mb-1">Kelvin:</label>
+                    <input type="number" id="kelvin" onchange="calTemp(event)" name="kelvin" class="form-input border-gray-300 rounded-md focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-200">
+                </div>
             </div>
-            <div class="box">
-                <label for="">Fahrenheit:</label>
-                <input type="number" id="fahrenheit" onchange="calTemp(event)" name="fahrenheit">
+            <div class="mt-4">
+                <h2 id="output" class="text-lg font-medium text-gray-800"></h2>
             </div>
-            <div class="box">
-                <label for="">Kelvin:</label>
-                <input type="number" id="kelvin" onchange="calTemp(event)" name="kelvin">
-            </div>
-           
-            
-            
-        </div>
-        <div>
-            <h2 id="output"></h2>
         </div>
     </div>
-
-
 
     <script src="script.js"></script>
 </body>
