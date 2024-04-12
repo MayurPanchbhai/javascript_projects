@@ -33,7 +33,7 @@
 
 #quoteMaster{
     font-size: 20px;
-    padding: 0 10px;
+    
 }
 
 button{
@@ -45,6 +45,7 @@ button{
     border: none;
     width: auto;
     
+    border-radius: 5px;
 }
 
 button:hover{

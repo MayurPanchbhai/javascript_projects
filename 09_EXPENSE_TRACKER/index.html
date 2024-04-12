@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Expense Tracker || by Amit</title>
+</head>
+<body>
+    <nav>
+        <button class="money" onclick="openPopup()">Add Money</button><!--<h1 style="font-size: 15px;">-->
+        <h1>Expense tracker</h1>
+        <button class="cost" onclick="addExpenses()"> Expenses + </button>
+    </nav>
+    <div class="popup" style="display: none;">
+        <div class="inputDiv">
+            <input type="number" name="Enter amount" placeholder="Enter Your Amount" class="enterAmount">
+            <button type="submit" onclick="closePopup()">Submit</button>
+
+        </div>
+    </div>
+    <div class="popup1" style="display: none;">
+        <div class="inputDiv">
+            <input type="number" name="expense" id="" placeholder="Enter amount here">
+            <input type="text" name="expense" id="" placeholder="Enter reason for transaction">
+            <button onclick="addExpenses()">Submit</button><!--closePopup1-->
+        </div>
+    </div>
+    <div>
+        <div id="ExpenseHistory">
+            <div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+   display: flex; 
+   align-items: center;
+   justify-content: space-between;
+   background:rgba(25, 118, 210, 1);
+   border: none;
+   height: 60px;
+   margin-left: 20px;
+   margin-right:20px;
+   border-radius: 10px;
+}
+nav h1{
+    color: white;
+    border: 5px;
+    font-size: 4vh;
+}
+nav button{
+    cursor: pointer;
+    border: none;
+    box-sizing: border-box;
+    box-shadow: rgba(3, 191, 238, 0.521) 1px 2px 2px 2px;
+    background:rgba(5, 146, 240, 0.747);
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-right:10px;
+    margin: 15px;
+    color:white;
+    line-height: 6vh;
+    font-size: 15px;
+}
+nav button:hover{
+    background: rgb(5, 126, 240);
+    box-shadow: rgba(175, 230, 243, 0.521) 1px 2px 2px 2px;
+}
+.popup{
+    
+    border-radius: 6px;
+    position: absolute;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    padding: 0 30px;
+    
+    /* display: none; */
+    /* visibility: hidden; */
+ 
+} 
+/* .open-popup{
+    visibility: visible;
+} */
+
+.inputDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /* width: 150px; */
+    border: 1px solid black;
+    width: 400px;
+    height: 200px;
+    /* padding: 10px 0; */
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.inputDiv input{
+    height: 30px;
+    width: 300px;
+
+}
+.inputDiv button{
+    /* width: 60px; */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+
+.popup1{
+position: absolute;
+top: 50%;
+left: 50%;
+/* z-index: 1; */
+transform: translate(-50%,-50%);
+text-align: center;
+padding: 0 30px;
+
+}
