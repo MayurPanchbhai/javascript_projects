@@ -91,3 +91,32 @@ text-align: center;
 padding: 0 30px;
 
 }
+
+
+/* history  */
+#container{
+    /* width: 90%; */
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 12px;
+
+}
+
+
+#container div h3{
+    font-size: 15px;
+    color: red;
+}
+
+.transaction{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 80px;
+    border: 1px solid black;
+    width: 70%;
+    margin: 4px 0;
+    padding: 12px 23px;
+    border-radius: 10px;
+}
