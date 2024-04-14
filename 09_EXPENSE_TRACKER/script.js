@@ -4,14 +4,17 @@ let visible =document.getElementsByClassName("popup");//popup
 
 let addedAmounts=document.getElementsByClassName("enterAmount");//entering the amount
 
+let errorMsg = document.getElementById("error")//pritting
+let errorMsg1= document.getElementById("error1")//pritting
+
+let expenceDivShow=document.getElementById("expenceDiv");//hinding the expenses section before adding the money
+
 //open popup for adding money to the account
 function openPopup(){
     if (visible.length > 0) {
         visible[0].style.display = "block";
         
     }
-   
-    
     
 }
 
@@ -33,9 +36,15 @@ function closePopup(){
         // addedAmounts.placeholder="7";
         // Reset placeholder
         // addedAmounts.placeholder = "Enter Your Amount";
+        expenceDivShow.style.display="block";
     }
     else{
-        alert("enter the number");
+        setTimeout(function (){
+            errorMsg.innerText="You entered more money than balance";
+            setTimeout(function (){
+                errorMsg.innerHTML="";
+            },3000)
+        },20)
     }
     
 }
@@ -60,20 +69,41 @@ function addExpenses(){
         len++;
     }
     else{
-        if(len%2 != 0 &&addExpense1 !="" && ExpenseMsg1 !=""){
-            popup1Open[0].style.display="none"
-            len++;
+        if(len%2 != 0 && addExpense1 !="" && ExpenseMsg1 !=""){
+            if(addExpense1<=totalMoney){
+                popup1Open[0].style.display="none"
+                len++;
 
-            //subsracting the money from balance
-            totalMoney =totalMoney-addExpense1;
-            showBalance.innerText = totalMoney;
+                //subsracting the money from balance
+                totalMoney =totalMoney-addExpense1;
+                showBalance.innerText = totalMoney;
+            }
+            else{
+                setTimeout(function (){
+                    errorMsg1.innerText="You entered more money than balance";
+                    setTimeout(function (){
+                        errorMsg.innerHTML="";
+                    },3000)
+                },20)
+                
+            }
 
         }
         else if(addExpense1 == ""){
-            alert("enter the expenses amount")
+            setTimeout(function (){
+                errorMsg1.innerText="enter the expenses amount";
+                setTimeout(function (){
+                    errorMsg1.innerHTML="";
+                },3000)
+            },20)
         }
         else if(ExpenseMsg1 == ""){
-            alert("enter the expenses message")
+            setTimeout(function (){
+                errorMsg1.innerText="enter the expenses message";
+                setTimeout(function (){
+                    errorMsg1.innerHTML="";
+                },3000)
+            },20)
         }
         
     } 
