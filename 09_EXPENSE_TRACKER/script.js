@@ -203,5 +203,13 @@ function addExpenses(){
 }
 
 
+////to prevent from accidental refresh
+window.addEventListener('beforeunload', function(event) {
+    event.preventDefault();
+    event.returnValue = '';
 
+    const message = 'Are you sure you want to leave? Your changes may not be saved.';
+    event.returnValue = message; // For older browsers
+    return message;
+});
 
