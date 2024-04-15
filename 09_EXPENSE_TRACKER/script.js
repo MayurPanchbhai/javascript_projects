@@ -40,6 +40,7 @@ function openPopup(){
 // closing popup after adding the money
 let totalMoney=0
 function closePopup(){
+
     
     let addedAmount=addedAmounts[0]
 
@@ -48,7 +49,7 @@ function closePopup(){
         totalMoney=totalMoney + parseFloat(totalMoneys);
 
         showBalance.innerText = totalMoney;
-        var headings1 = ["Salary", "debit", totalMoney];
+        var headings1 = ["Salary", "credit", totalMoney];
         
 
         visible[0].style.display="none"
@@ -71,6 +72,9 @@ function closePopup(){
             h3.textContent = text;
             // Append the h3 element to the div
             newDiv.appendChild(h3);
+
+            // reseting the input section 
+            addedAmount.value="";
         });
         // Append the div to an existing element with id "container"
         document.getElementById("container").appendChild(newDiv);
@@ -128,7 +132,7 @@ function addExpenses(){
                 totalMoney =totalMoney-addExpense1;
                 showBalance.innerText = totalMoney;
 
-                var headings2 = [ExpenseMsg1, "credit", addExpense1];
+                var headings2 = [ExpenseMsg1, "debit", addExpense1];
 
                 // Loop through the array and create h3 elements
                 var newDiv = document.createElement("div");
@@ -146,6 +150,13 @@ function addExpenses(){
                 });
                 // Append the div to an existing element with id "container"
                 document.getElementById("container").appendChild(newDiv);
+
+
+
+                // resetting the input value
+                addExpense.value="";
+                ExpenseMsg.value="";
+
                 
             }
             else{
