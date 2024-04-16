@@ -67,17 +67,28 @@ nav button:hover{
     /* padding: 10px 0; */
     border-radius: 5px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    background-color: white;
 }
 
 .inputDiv input{
     height: 30px;
     width: 300px;
+    border: 1px solid;
+    padding: 0 20px;
+    border-radius: 5px;
+    
 
 }
 .inputDiv button{
     /* width: 60px; */
     padding: 10px 20px;
     border-radius: 5px;
+    border: 1px solid;
+}
+
+.inputDiv button:hover{
+    background-color: rgb(91, 199, 91);
+    color: white;
 }
 
 

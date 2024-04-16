@@ -4,10 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+
     <title>Expense Tracker</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <nav>
+
+    <!-- header starts -->
+    <div class="text-gray-600 body-font bg-white" style="color:black; border-bottom: 1px solid black;">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center h-auto">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+               
+              <span class="ml-3 text-xl" style="color: rgb(0, 0, 0);">Mayur Panchbhai</span>
+            </a>
+            <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center" style="background-color: transparent;">
+              <a href="../index.html" class="mr-5 hover:text-gray-900">Home</a>
+              <a class="mr-5 hover:text-gray-900">Contact</a>
+              <a class="mr-5 hover:text-gray-900">Services</a>
+              <a class="mr-5 hover:text-gray-900">About</a>
+            </nav>
+            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" style="color: white; background: #0d7a7e; border: 1px solid white; width: auto; " >
+              <a href="https://wa.me/qr/J3A6M4GKFHD5D1">Whatsapp</a>
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24" >
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>  
+            </button>
+        </div>
+    </div>
+    <!-- header end -->
+
+    
+    <nav style="margin-top: 10px;">
         <button class="money" onclick="openPopup()">Add Money</button><!--<h1 style="font-size: 15px;">-->
         <h1>Expense tracker</h1>
         <div>
