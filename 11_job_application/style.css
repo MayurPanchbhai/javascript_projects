@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    /* width: 1000px; */
+    /* border: 2px solid; */
+}
+
+.inputSection{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    padding: 15px 15px;
+   
+}
+.inputDivs{
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    width: 300px;
+    padding: 7px 20px;
+    
+} 
+select {
+    width: 345px;
+    padding: 7px 20px;
+    
+} 
+/* 
+.inputSection div{
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    justify-content: center;
+    text-align: center;
+    margin-top:15px
+
+} */
+
+.hori{
+    width: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 41px;
+}
+.var{
+    width: -webkit-fill-available;
+    display: flex;
+    flex-direction: row;
+    padding: 10px 41px;
+}
+
+.status{
+    width: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 41px;
+}
+
+#status2{
+    display: flex;
+    flex-direction: column; 
+    width:-webkit-fill-available;
+    margin-top: 5px;
+}
+
+#status2 div{
+    display: flex;
+    justify-content: space-between;
+}

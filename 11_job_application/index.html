@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div>
+            <h1>Job Application Form</h1>
+        </div>
+        <div id="About">
+            <textarea name="About" id="" cols="100" rows="7" placeholder="Enter about yourself here"></textarea>
+            
+        </div>
+        <div class="inputSection">
+            <div class="hori">
+                <label for="FirstName">Name</label>
+                <div class="inputDivs">
+                    <input type="text" placeholder="First" >
+                    <input type="text" placeholder="Last">
+                </div>
+                
+            </div>
+            <div class="hori">
+                <label for="FirstName">Email</label>
+                <div class="inputDivs">
+                    <input type="text" placeholder="Email" >
+                </div>
+                
+            </div>
+            <div class="var">
+                <div class="">
+                    <label for="FirstName">What position are you applying for?</label>
+                    <select name="" id="position" onchange="showInput()">
+                        <option value="2">Front-End Developer</option>
+                        <option value="3">Back-End Developer</option>
+                        <option value="4">Full-stack Developer</option>
+                        <option value="5">UI/UX Designer</option>
+                        <option value="6">Web Designer</option>
+                        <option value="7">Web Developer</option>
+                        <option value="8">Software Engineer</option>
+                        <option value="9">Software Engineer</option>
+                        <option value="10">Quality Assurance (QA) Engineer</option>
+                        <option value="11">Systems Administrator</option>
+                        <option value="12">Project Manager</option>
+                        <option value="13">Technical Support Specialist</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div id="otherPosition" style="display: none; margin-top: 10px;"  >
+                        <input type="text" placeholder="Enter your position">
+                    </div>
+                </div>
+                
+                <div class="">
+                    <label for="FirstName">Date Of Availability</label>
+                    <input type="date" placeholder="Last">
+                </div>
+                
+            </div>
+            
+            <div class="status">
+                <div>
+                    <label for="">What is your current employment status</label>
+                    
+                </div>
+                <div id="status2" >
+                    <div>
+                         <label style="margin-left: 6rem;">
+                            <input type="radio" name="employment" value="Employed" style="width: auto;" >
+                            Employed
+                        </label>
+                        <label style="margin-right: 6rem;">
+                            <input type="radio" name="employment" value="Self-employed" style="width: auto;">
+                            Self-employed
+                        </label> 
+                    </div>
+                    <div>
+                        <label style="margin-left: 6rem;">
+                            <input type="radio" name="employment" value="Unemployed" style="width: auto;">
+                            Unemployed
+                        </label>
+                        <label style="margin-right: 8.81rem;">
+                            <input type="radio" name="employment" value="Student" style="width: auto;">
+                            Student
+                        </label>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <div>
+            <Button onclick="window.print()">Print</Button>
+        </div>
+    </div>
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>
