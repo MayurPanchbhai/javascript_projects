@@ -6,10 +6,23 @@
 .main{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
-    /* width: 1000px; */
+    width: 100%;
     /* border: 2px solid; */
+}
+
+#application{
+    font-size: 3vmax;
+}
+#About{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#About textarea{
+    width: 87%;
 }
 
 .inputSection{
@@ -26,14 +39,24 @@
     justify-content: space-between;
 }
 
-input {
-    width: 300px;
-    padding: 7px 20px;
+#E-mail{
+    width: 98%;
+}
+
+input{
+    width: 21vw;
+    padding: 1% 2%;
+    display: flex;
+    flex-wrap: wrap;
     
 } 
 select {
-    width: 345px;
-    padding: 7px 20px;
+    /* width: 100%;
+    padding: 7px 20px; */
+    width: 23vw;
+    padding: 2% 2%;
+    display: flex;
+    flex-wrap: wrap;
     
 } 
 /* 
@@ -48,16 +71,18 @@ select {
 } */
 
 .hori{
-    width: -webkit-fill-available;
+    width: 91%;
     display: flex;
     flex-direction: column;
     padding: 10px 41px;
 }
 .var{
-    width: -webkit-fill-available;
+    width: 91%;
     display: flex;
     flex-direction: row;
     padding: 10px 41px;
+    align-items: end;
+    /* justify-content: center; */
 }
 
 .status{
@@ -69,12 +94,49 @@ select {
 
 #status2{
     display: flex;
-    flex-direction: column; 
-    width:-webkit-fill-available;
-    margin-top: 5px;
+    /* flex-direction: column;  */
+    width:100%;
+    margin-top: 1vw;
+    justify-content: space-around;
 }
 
-#status2 div{
+.labelO{
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    gap: 1vh;
+}
+
+
+.selectInn1{
+    width: 100%;
+}
+.selectInn2{
+    width: 100%;
+}
+
+
+#datee{
+    width: 23.3vw;
+    padding: 1.5% 2%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#position{
+    font-size: 3vmin;
+}
+
+option{
+    font-size: 1vw;
+}
+
+Button{
+    width: 10%;
+    /* height: 20%; */
+    padding: 0.5vw 1vw;
+    border: none;
+    background-color: crimson;
+    border-radius: 5px;
+    color: #fff;
 }
