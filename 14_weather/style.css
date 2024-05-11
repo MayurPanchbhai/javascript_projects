@@ -18,8 +18,10 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
 }
-
-h2, label, p {
+#pressure{
+    color: red;
+}
+h2, label{
     color: #fff;
     margin: 8px 0;
 }
@@ -82,6 +84,11 @@ button:hover {
     align-items: center;
     margin-right: 10px;
     color: white;
+}
+
+.hourly-item p{
+    color: red;
+    margin-bottom: 1rem;
 }
 
 .hourly-item img {

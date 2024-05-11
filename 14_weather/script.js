@@ -1,3 +1,5 @@
+let pr = document.getElementById("pressure");
+
 function getWeather() {
     const apiKey = 'd52f1e5361864f91fa1a43349a4858a9';
     const city = document.getElementById('city').value;
@@ -11,9 +13,17 @@ function getWeather() {
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
 
     fetch(currentWeatherUrl)
-        .then(response => response.json())
+        .then(response =>
+            {
+                console.log(response,"response")
+                return response.json()
+                
+            }
+        )        
         .then(data => {
             displayWeather(data);
+            console.log(data);
+            console.log(data.main.pressure);
         })
         .catch(error => {
             console.error('Error fetching current weather data:', error);
@@ -75,6 +85,8 @@ function displayHourlyForecast(hourlyData) {
     const next24Hours = hourlyData.slice(0, 8); // Display the next 24 hours (3-hour intervals)
 
     next24Hours.forEach(item => {
+
+        const pp =item.main.pressure;
         const dateTime = new Date(item.dt * 1000); // Convert timestamp to milliseconds
         const hour = dateTime.getHours();
         const temperature = Math.round(item.main.temp - 273.15); // Convert to Celsius
@@ -83,6 +95,7 @@ function displayHourlyForecast(hourlyData) {
 
         const hourlyItemHtml = `
             <div class="hourly-item">
+                // <p>${pp}</p>
                 <span>${hour}:00</span>
                 <img src="${iconUrl}" alt="Hourly Weather Icon">
                 <span>${temperature}°C</span>
@@ -97,3 +110,9 @@ function showImage() {
     const weatherIcon = document.getElementById('weather-icon');
     weatherIcon.style.display = 'block'; // Make the image visible once it's loaded
 }
+
+
+
+
+
+// pr.innerHTML=`${data.main.pressure}`
