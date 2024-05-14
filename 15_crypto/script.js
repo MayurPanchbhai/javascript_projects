@@ -21,36 +21,39 @@ async function getStat(){
 
             
             // console.log(ele);
-            console.log(finalVal[0].id);
-            console.log(finalVal[0].name);
-            console.log(finalVal[0].current_price);
-            console.log(finalVal[0].total_volume);
-            console.log(finalVal[0].high_24h);
-            console.log(finalVal[0].low_24h);
+            const v1=finalVal[0].market_cap_rank;
+            const v2=finalVal[0].name;
+            const v3=finalVal[0].symbol;
+            const v4=finalVal[0].current_price;
+            const v5=finalVal[0].high_24h;
+            const v6=finalVal[0].low_24h;
+            const v7=Math.floor(finalVal[0].price_change_24h);
+
+            // console.log(v7);
+            // console.log(v6);
+            // console.log(v5);
+            // console.log(v4);
+            // console.log(v3);
+            // console.log(v2);
+            // console.log(v1);
 
             
             let imgURL =finalVal[0].image;
 
-            // universal var
-            // let itme = `0.${}`
-
-            // variable for all data 
-            // const rank=
-
             //printing all value to the html
-            // const coin =`
-            // <div>
-            //     <p>market_cap_rank": 1</p>
-            //     <img src="{imgURL}" alt="">
-            //     <p>name/bitcooin</p>
-            //     <p>symbol/BTC</p>
-            //     <p>price</p>
-            //     <p>high_24h</p>
-            //     <p>low_24h</p>
-            //     <p>price_change_24h</p>
-            // </div>`
+            const coin =`
+            <div id="showPort">
+                <p>${v1}</p>
+                <img src="${imgURL}" alt="">
+                <p>${v2}</p>
+                <p>${v3}</p>
+                <p>$ ${v4}</p>
+                <p>$ ${v5}</p>
+                <p>$ ${v6}</p>
+                <p>$ ${v7}</p>
+            </div>`
             
-            // ulist.innerHTML += coin;
+            ulist.innerHTML += coin;
 
         }
 
