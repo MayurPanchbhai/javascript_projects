@@ -11,8 +11,6 @@ const arr=["bitcoin","ethereum","tether","binancecoin","solana","ripple","dogeco
 async function getStat(){
 
     try{
-        
-
         for (ele of arr){
             const rawVal = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${ele}&x_cg_demo_api_key=${APIKey}`);
 
