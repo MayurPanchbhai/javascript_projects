@@ -32,24 +32,33 @@
             </div>
             <div id="track">
                 <audio  id="audio">
-                    <source src="beats/AUTOMOTIVO MAGIA TERRORIFICA -p(SUPER SLOWED) -EDIT -.mp3" type="audio/mpeg">
+                    <source id="audioSource" src="beats/AUTOMOTIVO MAGIA TERRORIFICA -p(SUPER SLOWED) -EDIT -.mp3" type="audio/mpeg" >
                 </audio>
 
             </div>
 
             <div id="trackLength">
-                <div id="TL">
+                <div class="timer">
+                    <h2 id="disCuTi" class="time"></h2>
+                </div>
+                <div class="slidecontainer">
+                    <input type="range" min="1" max="100" value="0" class="slider" id="myRange">
+                </div>
+                <div class="timer">
+                    <h2 id="disToTi" class="time"></h2>
+                </div>
+                <!-- <div id="TL">
                     <div id="div1"></div>
                     <div id="div2">
                         <div></div>
                     </div>
-                </div>
+                </div> -->
                 
             </div>
             <div id="control">
-                <button onclick="" id="backward"><i class="fas fa-step-backward"></i></button>
-                <button onclick="playPause()" id="play-pause"><i class="fas fa-play" id="play"></i><i class="fas fa-pause" style="display: none;" id="pause"></i></button>
-                <button onclick="" id="forward"><i class="fas fa-step-forward"></i></button>
+                <p onclick="previous()" id="backward"><i class="fas fa-step-backward"></i></p>
+                <p onclick="playPause()" id="play-pause"><i class="fas fa-play" id="play"></i><i class="fas fa-pause" style="display: none;" id="pause"></i></p>
+                <p onclick="next()" id="forward"><i class="fas fa-step-forward"></i></p>
             </div>
 
         </div>
