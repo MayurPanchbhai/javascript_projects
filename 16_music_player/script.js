@@ -26,13 +26,13 @@ const songs=[
     {
         title:"second Song",
         path:"../16_music_player/beats/AUTOMOTIVO DA SEQUÊNCIA INTER-CELESTIAL 3.0 (Slowed + Reverb).mp3",
-        singer:"Writer 1",
+        singer:"Writer 2",
         thumbnailPath:"../16_music_player/trackImg/Screenshot (184).png"
     },
     {
         title:"third Song",
         path:"../16_music_player/beats/AUTOMOTIVO MAGIA TERRORIFICA -p(SUPER SLOWED) -EDIT -.mp3",
-        singer:"Writer 1",
+        singer:"Writer 3",
         thumbnailPath:"../16_music_player/trackImg/Screenshot (210).png"
     }
 ]
@@ -96,12 +96,14 @@ function playPause(){
 
         updateTime();
         RImg();
+        // thumbnail.classList.add('ro');//image rotate start
     }
     else{
         audio.pause();
         document.getElementById("pause").style.display="none";
         document.getElementById("play").style.display="block";
         RImg();
+        // thumbnail.classList.remove('ro');//imgage rotate stop
     }
     
 }
@@ -112,8 +114,8 @@ function playPause(){
 
 function RImg(){
     setTimeout(function(){
-        if(thumbnail.classList=="ro"){
-            thumbnail.classList.remove('ro');
+        if(audio.paused ){
+            thumbnail.classList.remove('ro');//imgage rotate stop
         }else{
             thumbnail.classList.add('ro');
         }

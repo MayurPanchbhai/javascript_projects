@@ -246,3 +246,17 @@ i{
     color: var(--secondary-col);
     font-size: 0.7rem;
 }
+
+
+
+/* volume control */
+.volumeContiner{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.volumeContiner input{
+    width: 50%;
+    color: ;
+}
