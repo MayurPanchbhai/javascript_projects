@@ -1,71 +1,100 @@
-const Tracks={
-    0:{
-        link:"../beats/AUTOMOTIVO MAGIA TERRORIFICA -p(SUPER SLOWED) -EDIT -.mp3",
-        name:"author 1",
-        img:"../trackImg/MainAfter.webp"
-    },
-
-    1:{
-        link:"../beats/AUTOMOTIVO DA SEQUÊNCIA INTER-CELESTIAL 3.0 (Slowed + Reverb).mp3",
-        name:"author 2",
-        img:"../trackImg/MainAfter.webp",
-    },
-    2:{
-        link:"../beats/Already Dead(MP3_320K).mp3",
-        name:"author 3",
-        img:"../trackImg/MainAfter.webp",
-    }
-
-}
-
-// variable for the current time element
-let curTime=document.getElementById("disCuTi");
-let toTime=document.getElementById("disToTi");
-
-
-// slider selector
-let slider = document.getElementById("myRange");
-let output = document.getElementById("demo");
-
-let audio = document.getElementById("audio");
-
+let audio=document.getElementById("audio");
 let audioSource=document.getElementById("audioSource");
-// play pause the music
+let thumbnail=document.getElementById("thumbnail");
+let currentTime=document.getElementById("currentTime");
+let totalTime=document.getElementById("totalTime");
+let Range=document.getElementById("Range");
+let songTitle=document.getElementById("title");
 
+let index=0;
 
-let number=2;
-function next(){
-    number=number+1;
-    let sr=Tracks[(number+1)%3];
-
-    audioSource.src=sr.link;
-
-    audio.load();
-    audio.play();
-    update();
-    RImg();
+audio.onloadedmetadata=function (){
+    loadInfo();
 }
 
-function previous(){
-    number=number-1;
-    let sr=Tracks[(number)%3];
-    audioSource.src=sr.link;
 
-    audio.load();
-    audio.play();
-    update();
-    RImg();
+
+
+// playlist 
+const songs=[
+    {
+        title:"first Song",
+        path:"../16_music_player/beats/Already Dead(MP3_320K).mp3",
+        singer:"Writer 1",
+        thumbnailPath:"../16_music_player/trackImg/MainAfter.webp"
+    },
+    {
+        title:"second Song",
+        path:"../16_music_player/beats/AUTOMOTIVO DA SEQUÊNCIA INTER-CELESTIAL 3.0 (Slowed + Reverb).mp3",
+        singer:"Writer 1",
+        thumbnailPath:"../16_music_player/trackImg/Screenshot (184).png"
+    },
+    {
+        title:"third Song",
+        path:"../16_music_player/beats/AUTOMOTIVO MAGIA TERRORIFICA -p(SUPER SLOWED) -EDIT -.mp3",
+        singer:"Writer 1",
+        thumbnailPath:"../16_music_player/trackImg/Screenshot (210).png"
+    }
+]
+let i=songs[0];
+console.log(i.title);
+
+function loadInfo(){
+
+    console.log(index);
+    let currentIndex = songs[index];
+
+
+    // loading the song information
+    audioSource.src=currentIndex.path;
+    thumbnail.src=currentIndex.thumbnailPath;
+    songTitle.innerText=currentIndex.title;
+
+    // loading the timing
+    updateTime()
+    
 }
+
+
+function updateTime(){
+    audio.onloadedmetadata=function (){
+        loadInfo();
+    }
+    //updating the time
+    let time=audio.duration;
+    let totMinutes = Math.floor(time / 60);
+    let totSeconds = Math.floor(time % 60);
+
+    setInterval(()=> {
+
+        totalTime.textContent = `${totMinutes}:${totSeconds < 10 ? '0' : ''}${totSeconds}`;
+        let currTime =audio.currentTime
+        const currentMinutes = Math.floor(currTime / 60);
+        const currentSeconds = Math.floor(currTime % 60);
+
+        currentTime.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds}`;
+        
+        Range.value = ((currTime/time)*100);
+        // updatingSlider();
+    },1)
+
+
+    let currT=audio.currentTime;
+    let toT=audio.duration;
+
+
+
+}
+
 
 
 function playPause(){
-      
     if(audio.paused || audio.ended){
         audio.play();
         document.getElementById("play").style.display="none";
         document.getElementById("pause").style.display="block";
 
-        update();
+        updateTime();
         RImg();
     }
     else{
@@ -79,70 +108,59 @@ function playPause(){
 
 
 
-// rotating image
-let rotImg =document.getElementById("rotImg");
+
 
 function RImg(){
-    if(rotImg.classList=="ro"){
-        rotImg.classList.remove('ro');
-    }else{
-        rotImg.classList.add('ro');
+    setTimeout(function(){
+        if(thumbnail.classList=="ro"){
+            thumbnail.classList.remove('ro');
+        }else{
+            thumbnail.classList.add('ro');
+        }
+        
+    
+    },600)
+}
+
+
+// next button
+function next(){
+    RImg();
+    document.getElementById("play").style.display="none";
+    document.getElementById("pause").style.display="block";
+    if(index < songs.length){
+        index++;
+        loadInfo();
+        audio.load();
+        audio.play();
+        
+    }
+    else{
+        index=0
+        loadInfo();
+        audio.load();
+        audio.play();
     }
     
 }
 
 
-
-
-
-
-
-
-
-
-// audio timing 
-function update(){
-
-    //updating the time 
-    let time=audio.duration;
-    let totMinutes = Math.floor(time / 60);
-    let totSeconds = Math.floor(time % 60);
-
-    toTime.textContent = `${totMinutes}:${totSeconds < 10 ? '0' : ''}${totSeconds}`;
-
-    setInterval(()=> {
-        let currTime =audio.currentTime
-        const currentMinutes = Math.floor(currTime / 60);
-        const currentSeconds = Math.floor(currTime % 60);
-
-        curTime.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds}`;
-        // updatingSlider();
-        slider.value = ((currTime/time)*100);
-         
-    },200)
-
-
+// previous button
+function previous(){
+    document.getElementById("play").style.display="none";
+    document.getElementById("pause").style.display="block";
+    RImg();
+    if(index < songs.length){
+        index++;
+        loadInfo();
+        audio.load();
+        audio.play();
+    }
+    else{
+        index=0
+        loadInfo();
+        audio.load();
+        audio.play();
+    }
     
 }
-
-
-
-// output.innerHTML = slider.value; // Display the default slider value
-
-// Update the current slider value (each time you drag the slider handle)
-// slider.oninput = function() {
-//   output.innerHTML = this.value;
-
-// }
-
-// console.log(slider.value);
-
-
-// updating the value of the range slider
-
-// function updatingSlider(){
-    
-// }
-
-
-// 

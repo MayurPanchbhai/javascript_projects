@@ -20,7 +20,7 @@
             <div id="center">
                 <div id="center-middle">
                     <div id="middle">
-                        <img src="trackImg/MainAfter.webp" alt="" id="rotImg" class="">
+                        <img src="" alt="" id="thumbnail" class="">
                     </div>
                 </div>
                 
@@ -28,24 +28,24 @@
             </div>
 
             <div id="song">
-                <h1 id="title">Name of the song</h1>
+                <h1 id="title"></h1>
             </div>
             <div id="track">
-                <audio  id="audio">
-                    <source id="audioSource" src="beats/AUTOMOTIVO MAGIA TERRORIFICA -p(SUPER SLOWED) -EDIT -.mp3" type="audio/mpeg" >
+                <audio id="audio">
+                    <source id="audioSource" src="../16_music_player/beats/Already Dead(MP3_320K).mp3" type="audio/mpeg" >
                 </audio>
 
             </div>
 
             <div id="trackLength">
                 <div class="timer">
-                    <h2 id="disCuTi" class="time"></h2>
+                    <h2 id="currentTime" class="time"></h2>
                 </div>
                 <div class="slidecontainer">
-                    <input type="range" min="1" max="100" value="0" class="slider" id="myRange">
+                    <input type="range" min="1" max="100" value="0" class="slider" id="Range">
                 </div>
                 <div class="timer">
-                    <h2 id="disToTi" class="time"></h2>
+                    <h2 id="totalTime" class="time"></h2>
                 </div>
                 <!-- <div id="TL">
                     <div id="div1"></div>
@@ -56,9 +56,9 @@
                 
             </div>
             <div id="control">
-                <p onclick="previous()" id="backward"><i class="fas fa-step-backward"></i></p>
+                <i onclick="previous()" id="backward" class="fas fa-step-backward"></i>
                 <p onclick="playPause()" id="play-pause"><i class="fas fa-play" id="play"></i><i class="fas fa-pause" style="display: none;" id="pause"></i></p>
-                <p onclick="next()" id="forward"><i class="fas fa-step-forward"></i></p>
+                <i onclick="next()" id="forward" class="fas fa-step-forward"></i>
             </div>
 
         </div>
