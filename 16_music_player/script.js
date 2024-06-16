@@ -29,7 +29,7 @@ const songs=[
     },
     {
         title:"Sajni",
-        path:"../16_music_player/beats/Sajni (Lyrical Video)_ Arijit Singh, Ram Sampath _ Laapataa Ladies _  Aamir Khan Productions (320 kbps).mp3",
+        path:"../16_music_player/beats/Sajni .MP3",
         singer:"Arijit Singh",
         thumbnailPath:"../16_music_player/trackImg/sajni.jpg"
     },
