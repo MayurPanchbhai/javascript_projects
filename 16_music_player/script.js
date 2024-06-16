@@ -1,15 +1,19 @@
 let audio=document.getElementById("audio");
 let audioSource=document.getElementById("audioSource");
 let thumbnail=document.getElementById("thumbnail");
+let thumbnailBack=document.getElementById("thumbnailBack");
 let currentTime=document.getElementById("currentTime");
 let totalTime=document.getElementById("totalTime");
 let Range=document.getElementById("Range");
 let songTitle=document.getElementById("title");
+let author=document.getElementById("author");
 
 let index=0;
+let updateInterval;
 
 audio.onloadedmetadata=function (){
-    loadInfo();
+    updateTime();
+    
 }
 
 
@@ -18,57 +22,65 @@ audio.onloadedmetadata=function (){
 // playlist 
 const songs=[
     {
-        title:"first Song",
-        path:"../16_music_player/beats/Already Dead(MP3_320K).mp3",
-        singer:"Writer 1",
-        thumbnailPath:"../16_music_player/trackImg/MainAfter.webp"
+        title:"Aankhon Mein Teri Ajab Si",
+        path:"../16_music_player/beats/Aankhon Mein Teri Ajab Si (Lyrical) Om Shanti Om _ K.K. _ Shahrukh Khan _ Deepika Padukone (128 kbps).mp3",
+        singer:"Krishnakumar Kunnath",
+        thumbnailPath:"../16_music_player/trackImg/ankho me teri.gif"
     },
     {
-        title:"second Song",
-        path:"../16_music_player/beats/AUTOMOTIVO DA SEQUÊNCIA INTER-CELESTIAL 3.0 (Slowed + Reverb).mp3",
-        singer:"Writer 2",
-        thumbnailPath:"../16_music_player/trackImg/Screenshot (184).png"
+        title:"Sajni",
+        path:"../16_music_player/beats/Sajni (Lyrical Video)_ Arijit Singh, Ram Sampath _ Laapataa Ladies _  Aamir Khan Productions (320 kbps).mp3",
+        singer:"Arijit Singh",
+        thumbnailPath:"../16_music_player/trackImg/sajni.jpg"
     },
-    {
-        title:"third Song",
-        path:"../16_music_player/beats/AUTOMOTIVO MAGIA TERRORIFICA -p(SUPER SLOWED) -EDIT -.mp3",
-        singer:"Writer 3",
-        thumbnailPath:"../16_music_player/trackImg/Screenshot (210).png"
-    }
+    // {
+    //     title:"third Song",
+    //     path:"../16_music_player/beats/0616.MP3",
+    //     singer:"Writer 3",
+    //     thumbnailPath:"../16_music_player/trackImg/sajni.jpg"
+    // },
+    // {
+    //     title:"third Song",
+    //     path:"../",
+    //     singer:"Writer 3",
+    //     thumbnailPath:"../16_music_player/trackImg/sajni.jpg"
+    // }
 ]
-let i=songs[0];
-console.log(i.title);
+
 
 function loadInfo(){
 
-    console.log(index);
     let currentIndex = songs[index];
 
 
     // loading the song information
     audioSource.src=currentIndex.path;
     thumbnail.src=currentIndex.thumbnailPath;
+    thumbnailBack.src=currentIndex.thumbnailPath;
     songTitle.innerText=currentIndex.title;
+    author.innerText=currentIndex.singer
 
-    // loading the timing
-    updateTime()
+    audio.load();
+    audio.onloadedmetadata = updateTime;
     
 }
 
 
 function updateTime(){
-    audio.onloadedmetadata=function (){
-        loadInfo();
-    }
+    clearInterval(updateInterval);
+    
     //updating the time
     let time=audio.duration;
     let totMinutes = Math.floor(time / 60);
     let totSeconds = Math.floor(time % 60);
+    totalTime.textContent = `${totMinutes}:${totSeconds < 10 ? '0' : ''}${totSeconds}`;
 
-    setInterval(()=> {
+    
 
-        totalTime.textContent = `${totMinutes}:${totSeconds < 10 ? '0' : ''}${totSeconds}`;
-        let currTime =audio.currentTime
+    updateInterval =setInterval(()=> {
+
+        
+        let currTime =audio.currentTime;
         const currentMinutes = Math.floor(currTime / 60);
         const currentSeconds = Math.floor(currTime % 60);
 
@@ -76,13 +88,12 @@ function updateTime(){
         
         Range.value = ((currTime/time)*100);
         // updatingSlider();
-    },1)
 
-
-    let currT=audio.currentTime;
-    let toT=audio.duration;
-
-
+        // this might mr load the next song
+        if(time==currTime){
+            next()
+        }
+    },1000);
 
 }
 
@@ -121,7 +132,7 @@ function RImg(){
         }
         
     
-    },600)
+    },200)
 }
 
 
@@ -130,19 +141,15 @@ function next(){
     RImg();
     document.getElementById("play").style.display="none";
     document.getElementById("pause").style.display="block";
-    if(index < songs.length){
+    if(index < songs.length-1){
         index++;
-        loadInfo();
-        audio.load();
-        audio.play();
-        
     }
     else{
         index=0
-        loadInfo();
-        audio.load();
-        audio.play();
     }
+
+    loadInfo();
+    audio.play();
     
 }
 
@@ -152,17 +159,41 @@ function previous(){
     document.getElementById("play").style.display="none";
     document.getElementById("pause").style.display="block";
     RImg();
-    if(index < songs.length){
-        index++;
-        loadInfo();
-        audio.load();
-        audio.play();
+    if(index >0){
+        index--;
     }
     else{
-        index=0
-        loadInfo();
-        audio.load();
-        audio.play();
+        index=songs.length;
     }
     
+    loadInfo();
+    audio.play();
+    
 }
+
+
+// Initial load
+loadInfo();
+
+
+
+
+
+
+// volume control
+let volConl = document.getElementById("volumeSlider");
+let sliderVol =document.getElementsByClassName("sliderVol")
+
+volConl.addEventListener('change' , function (){
+    let val=volConl.value;
+    audio.volume=val*0.01;
+    let maxval=volConl.max;
+
+    volConl.value=val;
+    let percentage = (val / maxval) * 100;
+    let remainPercent = 100-percentage;
+
+    sliderVol.style.background = 'linear-gradient(to right, #4c00ff '+ percentage  +'%, #ccc ' + remainPercent + '%)';
+})
+
+
