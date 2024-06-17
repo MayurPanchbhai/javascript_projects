@@ -44,7 +44,7 @@
                     <h2 id="currentTime" class="time"></h2>
                 </div>
                 <div class="slidecontainer">
-                    <input type="range" min="1" max="100" value="0" class="slider" id="Range">
+                    <input type="range"  value="0" class="slider" id="Range">
                 </div>
                 <div class="timer">
                     <h2 id="totalTime" class="time"></h2>
@@ -59,13 +59,13 @@
             </div>
             <div id="control">
                 <i onclick="previous()" id="backward" class="fas fa-step-backward"></i>
-                <p onclick="playPause()" id="play-pause"><i class="fas fa-play" id="play"></i><i class="fas fa-pause" style="display: none;" id="pause"></i></p>
+                <p onclick="playPause()" id="play-pause"><i class="fas fa-play" id="playPauseBtn"></i></p>
                 <i onclick="next()" id="forward" class="fas fa-step-forward"></i>
             </div>
 
 
             <div class="volumeContiner">
-                <input type="range" min="1" max="100" value="30" class="sliderVol" id="volumeSlider">
+                <input type="range"  value="30" class="sliderVol" id="volumeSlider">
             </div>
 
         </div>
