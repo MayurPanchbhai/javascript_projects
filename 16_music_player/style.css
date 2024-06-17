@@ -11,9 +11,9 @@ i{
 }
 
 :root{
-    --primary-col:#9d201a;
+    --primary-col:#C80036;
     --secondary-col:#ffffff;
-    --tertury-col:#b04d48; 
+    --tertury-col:#FF6969; 
 
     --gradient-col:linear-gradient(
         130deg,
@@ -72,6 +72,15 @@ i{
     border-radius: 20px;
     filter: blur(2px);
     z-index: 2;
+}
+#specialVideo{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 20px;
+    filter: blur(2px);
+    z-index: 2;
+    object-fit: cover;
 }
 #middle{
     width: 200px;
@@ -222,11 +231,12 @@ i{
     appearance: none;
     width: 100%; /* Full-width */
     height: 5px; /* Specified height */
-    background: var(--secondary-col); /* Grey background */
+    background: white; /* Grey background */
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
+    border-radius: 15px;
 }
   
 /* Mouse-over effects */
@@ -238,17 +248,18 @@ i{
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
-    width: 15px; /* Set a specific slider handle width */
-    height: 15px; /* Slider handle height */
-    background: black; /* Green background */
-    cursor: pointer; /* Cursor on hover */
+    width: 15px;
+    height: 15px;
+    background: #4c00ff;
+    cursor: pointer;
     border-radius: 50%;
+    border: 2px solid #ffffff;
 }
   
 .slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    background: #04AA6D; /* Green background */
+    background: #ffffff; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
 
@@ -310,7 +321,7 @@ i{
     background: #4c00ff;
     cursor: pointer;
     border-radius: 50%;
-    border: 2px solid #eeff03;
+    border: 2px solid #ffffff;
     margin-top: -5px; /* Adjusts for the thumb height so it sits centered */
   }
   
@@ -336,3 +347,15 @@ i{
     border: 2px solid #000;
   }
   
+
+
+@media screen and (max-width: 560px){
+    .main{
+        padding-top: 0px;
+    } 
+    .sub{
+        /* margin-top: 20px; */
+        transform: translateY(-90px);
+    }
+    
+}
