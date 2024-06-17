@@ -50,6 +50,7 @@ const songs=[
 
 function loadInfo(){
 
+    audio.volume=0.3;
     let currentIndex = songs[index];
 
 
@@ -197,3 +198,12 @@ volConl.addEventListener('change' , function (){
 })
 
 
+
+
+Range.addEventListener('change',function(){
+    let time =Range.value;
+
+    audio.play;
+    
+
+})
