@@ -14,59 +14,71 @@
 <body>
     <section class="main">
         <div class="sub">
-            <div id="topBar">
-                <!-- <i class="fas fa-bars"></i> -->
-            </div>
-            <div id="center">
-                <div id="center-middle">
-                    <img src="./trackImg/ankho me teri.gif" alt="" id="thumbnailBack">
-                    <!-- <video src="" id="specialVideo"></video> -->
-                    <div id="middle">
-                        <img src="" alt="" id="thumbnail" class="">
+            <div id="sub1">
+                <div id="topBar">
+                    <i class="fas fa-bars" onclick="Playlist()" id="icon"></i>
+                    <div id="list" class="hideList">
+                        <div id="fullList">
+                            <p>Playlist</p>
+                        </div>
+                   
                     </div>
                 </div>
-                
-                
             </div>
+            <div id="sub2">
 
-            <div id="song">
-                <h1 id="title"></h1>
-                <h6 id="author"></h6>
-            </div>
-            <div id="track">
-                <audio id="audio">
-                    <source id="audioSource" src="../16_music_player/beats/Already Dead(MP3_320K).mp3" type="audio/mpeg" >
-                </audio>
-
-            </div>
-
-            <div id="trackLength">
-                <div class="timer">
-                    <h2 id="currentTime" class="time"></h2>
-                </div>
-                <div class="slidecontainer">
-                    <input type="range"  value="0" class="slider" id="Range">
-                </div>
-                <div class="timer">
-                    <h2 id="totalTime" class="time"></h2>
-                </div>
-                <!-- <div id="TL">
-                    <div id="div1"></div>
-                    <div id="div2">
-                        <div></div>
+            
+                <div id="center">
+                    <div id="center-middle">
+                        <img src="./trackImg/ankho me teri.gif" alt="" id="thumbnailBack">
+                        <!-- <video src="" id="specialVideo"></video> -->
+                        <div id="middle">
+                            <img src="" alt="" id="thumbnail" class="">
+                        </div>
                     </div>
-                </div> -->
-                
-            </div>
-            <div id="control">
-                <i onclick="previous()" id="backward" class="fas fa-step-backward"></i>
-                <p onclick="playPause()" id="play-pause"><i class="fas fa-play" id="playPauseBtn"></i></p>
-                <i onclick="next()" id="forward" class="fas fa-step-forward"></i>
-            </div>
+                    
+                    
+                </div>
+
+                <div id="song">
+                    <h1 id="title"></h1>
+                    <h6 id="author"></h6>
+                </div>
+                <div id="track">
+                    <audio id="audio">
+                        <source id="audioSource" src="" type="audio/mpeg" >
+                    </audio>
+
+                </div>
+
+                <div id="trackLength">
+                    <div class="timer">
+                        <h2 id="currentTime" class="time"></h2>
+                    </div>
+                    <div class="slidecontainer">
+                        <input type="range"  value="0" class="slider" id="Range">
+                    </div>
+                    <div class="timer">
+                        <h2 id="totalTime" class="time"></h2>
+                    </div>
+                    <!-- <div id="TL">
+                        <div id="div1"></div>
+                        <div id="div2">
+                            <div></div>
+                        </div>
+                    </div> -->
+                    
+                </div>
+                <div id="control">
+                    <i onclick="previous()" id="backward" class="fas fa-step-backward"></i>
+                    <p onclick="playPause()" id="play-pause"><i class="fas fa-play" id="playPauseBtn"></i></p>
+                    <i onclick="next()" id="forward" class="fas fa-step-forward"></i>
+                </div>
 
 
-            <div class="volumeContiner">
-                <input type="range"  value="30" class="sliderVol" id="volumeSlider">
+                <div class="volumeContiner">
+                    <input type="range"  value="30" class="sliderVol" id="volumeSlider">
+                </div>
             </div>
 
         </div>

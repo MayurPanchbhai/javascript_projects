@@ -18,9 +18,19 @@ let author = document.getElementById("author");
 
 let playPauseBtn = document.getElementById("playPauseBtn");
 
+// creating the element in the list 
+
+let fullList = document.getElementById("fullList");
+
 // let specialVideo = document.getElementById("specialVideo");
 
+let newList = document.getElementById("newList");//list of the song name
+
 let index = 0;
+
+
+let num = 1;//for the LoadList
+
 let updateInterval;
 
 // Playlist
@@ -67,7 +77,23 @@ audio.onloadedmetadata = function () {
     updateTime();
 };
 
+
+function songHighlight(index) {
+    // Remove the highlight class from all divs with the class 'newList'
+    let allNewListDivs = document.querySelectorAll('.newList');
+    allNewListDivs.forEach(div => {
+        div.classList.remove('highlight');
+    });
+
+    // Add the highlight class to the currently playing song
+    let currentDiv = document.getElementById('' + ( index+1));
+    if (currentDiv) {
+        currentDiv.classList.add('highlight');
+    }
+}
+
 function loadInfo(index) {
+
     let currentIndex = songs[index];
 
     // Loading the song information
@@ -76,6 +102,8 @@ function loadInfo(index) {
     thumbnailBack.src = currentIndex.thumbnailPath;
     songTitle.innerText = currentIndex.title;
     author.innerText = currentIndex.singer;
+
+    
 
     // if(currentIndex.special==1){
     //     specialVideo.style.display="block";
@@ -88,6 +116,9 @@ function loadInfo(index) {
 
     audio.load();
     audio.onloadedmetadata = updateTime;
+
+    songHighlight(index);
+
 }
 
 function updateTime() {
@@ -110,8 +141,10 @@ function updateTime() {
 
         if (currTime >= time) {
             next();
+            LoadList(index);
         }
     }, 500);
+    
 }
 
 function playPause() {
@@ -123,6 +156,8 @@ function playPause() {
         // specialVideo.pause();
     }
     togglePlayPauseIcon();
+
+    
 }
 
 function togglePlayPauseIcon() {
@@ -152,8 +187,10 @@ function next() {
 
 
     loadInfo(index);
+    songHighlight(index);
     setTimeout(()=>{
         audio.play();
+       
     },1500)
     
     
@@ -166,11 +203,14 @@ function previous() {
         index = songs.length - 1;
     }
     loadInfo(index);
+    songHighlight(index);
     audio.play();
 }
 
 // Initial load
 loadInfo(index);
+LoadList(index);
+// songHighlight(index);
 
 audio.onplay = function () {
     RImg();
@@ -194,3 +234,76 @@ range.oninput = function () {
     audio.currentTime = (range.value / 100) * audio.duration;
     updateTime();
 };
+
+
+
+// playlist js
+
+let icon = document.getElementById("icon");
+let list = document.getElementById("list");
+let sub2 = document.getElementById("sub2");
+// let counterOfList = 1;
+function Playlist(){
+    if(list.classList=="hideList"){
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-times");
+        list.classList.remove("hideList");
+
+        // adding to make the background blur
+        sub2.classList.add("Sub2blur");
+
+    }else{
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+        list.classList.add("hideList");
+
+        // removing the blur background blur
+        sub2.classList.remove("Sub2blur");
+    }
+}
+
+
+
+// creating the element in the list
+
+function LoadList(index) {
+    fullList.innerHTML = ''; // Clear existing list
+    let num = 1;
+    songs.forEach((element, idx) => {
+        let newListDiv = document.createElement("div");
+        let songName = element.title;
+        newListDiv.innerHTML = `
+        <p>${num}</p>
+        <h1>${songName}</h1>`;
+        fullList.appendChild(newListDiv);
+        newListDiv.setAttribute('id', num); 
+        newListDiv.setAttribute('class', 'newList'); 
+
+        if (idx === index) {
+            newListDiv.classList.add('highlight'); // Add highlight class to currently playing song
+        }
+
+        newListDiv.addEventListener('click', () => {
+            playSong(idx); // Adjusting index to match zero-based array indexing
+        });
+
+        num++;
+    });
+}
+
+
+
+function playSong(idx) {
+    loadInfo(idx);
+    audio.play();
+    songHighlight(idx); // Add this line
+
+
+    Playlist();
+}
+
+
+
+
+
+

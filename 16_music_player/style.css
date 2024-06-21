@@ -43,6 +43,20 @@ i{
     padding: 15px 15px;
 }
 
+#sub1{
+    height: 5%;
+}
+
+#sub2{
+    height: 95%;
+    
+}
+
+.Sub2blur{
+    filter: blur(5px);
+}
+
+
 #center{
     width: 100%;
     height: 50%;
@@ -358,4 +372,81 @@ i{
         transform: translateY(-90px);
     }
     
+}
+
+
+
+
+
+
+
+/* list of the songs */
+
+#topBar{
+    position: relative;
+}
+
+#topBar i{
+    color: white;
+}
+
+.hideList{
+    display: none;
+}
+
+#list{
+    position: absolute;
+    /* background-color: white; */
+    width: 100%;
+    z-index: 99;
+    top: 21px;
+}
+#icon{
+    /* background-color: white; */
+    width:35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+}
+
+#fullList{
+    /* background-color: rgb(255, 255, 255); */
+    
+    height: max-content;
+    padding: 10px 10px;
+    /* overflow: auto; */
+    border-radius: 15px;
+    color: white;
+}
+#list i{
+    color: black;
+    margin: 5px 10px;
+    font-size: 25px;
+}
+
+#fullList p{
+    text-align: center;
+}
+
+.newList{
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: c; */
+
+    margin-top: 20px;
+}
+
+.newList p{
+    width: 20%;
+}
+
+.highlight {
+    /* background-color: yellow;  */
+    color: black;
+    border: 1px solid var(--secondary-col);
+    border-radius: 15px;
 }
