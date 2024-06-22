@@ -27,9 +27,9 @@ i{
 }
 
 .main{
-    margin-top: 0.8rem;
+    margin-top: 20px;
     display: flex;
-    height: 98vh;
+    height: 100vh;
     justify-content: center;
     /* align-items: center; */
     padding: 15px 10px;
@@ -38,19 +38,19 @@ i{
 
 .sub{
     width: 400px;
-    height: 90vh;
+    height: 650px;
     background-color: var(--primary-col);
     border-radius: 15px;
     padding: 15px 15px;
 }
 
 #sub1{
-    height: 5%;
+    height: 3%;
 }
 
 #sub2{
-    height: 95%;
-    /* padding-bottom: 15px; */
+    height: 93%;
+    
 }
 
 .Sub2blur{
@@ -297,7 +297,7 @@ i{
 .volumeContiner{
     display: flex;
     justify-content: center;
-    padding-top: 0.5rem;
+    padding-top: 30px;
 }
 
 .volumeContiner input{
@@ -362,6 +362,29 @@ i{
     border: 2px solid #000;
   }
   
+
+
+@media screen and (min-width: 401px) and (max-width: 560px){
+    
+    .main{
+        padding-top: 0px;
+        margin-top: 95px;
+        
+    } 
+    .sub{
+        /* margin-top: 20px; */
+        transform: translateY(-90px);
+    }
+    
+}
+
+@media screen and (max-width: 400px){
+    .main {
+        margin-top: 30px;
+    }
+}
+    
+
 
 
 
@@ -437,41 +460,3 @@ i{
     border: 1px solid var(--secondary-col);
     border-radius: 15px;
 }
-
-
-@media screen and (max-width: 560px){
-    
-    .main{
-        margin-top: 0.2rem;
-        padding: 10px 6px;
-        height: 90vh;
-    } 
-
-    #control{
-        padding: 12px 40px;
-    }
-
-    .sub{
-        height: 88vh;
-        padding: 15px 15px;
-    }
-    
-}
-
-@media screen and (max-width: 400px){
-        .main{
-        margin-top: 0.2rem;
-        padding: 10px 6px;
-        height: 90vh;
-    } 
-
-    #control{
-        padding: 12px 40px;
-    }
-
-    .sub{
-        height: 82vh;
-        padding: 15px 15px;
-    }
-}
-    
