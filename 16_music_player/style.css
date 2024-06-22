@@ -27,11 +27,11 @@ i{
 }
 
 .main{
-    margin-top: 50px;
+    margin-top: 20px;
     display: flex;
     height: 100vh;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     padding: 15px 10px;
 }
 
@@ -368,7 +368,7 @@ i{
     
     .main{
         padding-top: 0px;
-        margin-top: 20px;
+        margin-top: 95px;
         
     } 
     .sub{
