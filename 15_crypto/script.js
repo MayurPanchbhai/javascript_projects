@@ -9,7 +9,6 @@ const arr=["bitcoin","ethereum","tether","binancecoin","solana","ripple","dogeco
 // let URL=`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${coinID}&x_cg_demo_api_key=${APIKey}`;
 // console.log(URL);
 async function getStat(){
-
     try{
         for (ele of arr){
             const rawVal = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${ele}&x_cg_demo_api_key=${APIKey}`);
